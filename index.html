@@ -12,51 +12,28 @@
     <meta charset="UTF-8">
     <title>ToDoApp</title>
 </head>
-<body ng-app="ToDoApp" ng-controller="ToDoCtrl">
+<body ng-app="ToDoApp" ng-controller="ToDoCtrl as todo">
 <div class="container">
     <h2>TO DO App</h2>
     <div class="row">
         <div class="col-md-10 col-sm-10">
-            <input type="text" class="form-control" ng-model="task" placeholder="My task..."/>
+            <input type="text" class="form-control" ng-model="todo.task" placeholder="My task..." required/>
         </div>
         <div class="col-md-2 col-sm-2">
-            <a type="button" class="btn btn-add">ADD TASK</a>
+            <button type="button" class="btn btn-add" ng-click="todo.addTask()" ng-disabled="!todo.task" >ADD TASK</button>
         </div>
     </div>
-
     <div class="row">
         <div class="taskList col-md-6 col-sm-12">
             <h3 class="taskList__header">to do</h3>
-            <ul class="taskList__body list-group">
-                <li class="task list-group-item clearfix">
+            <ul class="taskList__body list-group" >
+                <li class="task list-group-item clearfix" ng-repeat="task in todo.tasks">
                     <span class="task__text pull-left">{{task}}</span>
                     <div class="task__actions">
-                        <button type="button" class="btn btn-glyph">
+                        <button type="button" class="btn btn-glyph" ng-click="todo.move()">
                             <span class="glyphicon glyphicon-ok"></span>
                         </button>
-                        <button type="button" class="btn btn-glyph btn-glyph--red">
-                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-                        </button>
-                    </div>
-                </li>
-                <li class="task list-group-item clearfix">
-                    <span class="task__text pull-left">2.Uzdevums</span>
-                    <div class="task__actions">
-                        <button type="button" class="btn btn-glyph">
-                            <span class="glyphicon glyphicon-ok"></span>
-                        </button>
-                        <button type="button" class="btn btn-glyph btn-glyph--red">
-                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-                        </button>
-                    </div>
-                </li>
-                <li class="task list-group-item clearfix">
-                    <span class="task__text pull-left">3.Uzdevums</span>
-                    <div class="task__actions">
-                        <button type="button" class="btn btn-glyph">
-                            <span class="glyphicon glyphicon-ok"></span>
-                        </button>
-                        <button type="button" class="btn btn-glyph btn-glyph--red">
+                        <button type="button" class="btn btn-glyph btn-glyph--red" ng-click="todo.remove($index)">
                             <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                         </button>
                     </div>
@@ -66,26 +43,10 @@
         <div class="taskList col-md-6 col-sm-12">
             <h3 class="taskList__header">done</h3>
             <ul class="taskList__body list-group">
-                <li class="task list-group-item clearfix">
-                    <span class="task__text pull-left ">1. Uzdevums</span>
+                <li class="task list-group-item clearfix" ng-repeat="task in todo.tasks">
+                    <span class="task__text pull-left">{{task}}</span>
                     <div class="task__actions">
-                        <button type="button" class="btn btn-glyph btn-glyph--red">
-                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-                        </button>
-                    </div>
-                </li>
-                <li class="task list-group-item clearfix">
-                    <span class="task__text pull-left">2.Uzdevums</span>
-                    <div class="task__actions">
-                        <button type="button" class="btn btn-glyph btn-glyph--red">
-                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-                        </button>
-                    </div>
-                </li>
-                <li class="task list-group-item clearfix">
-                    <span class="task__text pull-left">3.Uzdevums</span>
-                    <div class="task__actions">
-                        <button type="button" class="btn btn-glyph btn-glyph--red">
+                        <button type="button" class="btn btn-glyph btn-glyph--red" ng-click="todo.remove($index)">
                             <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                         </button>
                     </div>

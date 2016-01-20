@@ -31,6 +31,7 @@ h3, h2 {
   }
 }
 .task {
+  margin-bottom: 10px;
   &__text {
     color:$taskTextColor;
   }
