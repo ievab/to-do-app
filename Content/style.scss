@@ -1,0 +1,50 @@
+$mainColor: #2bc432;
+$redButton: red;
+$taskTextColor: #333;
+body {
+  color:$mainColor;
+}
+
+h3, h2 {
+  text-align: center;
+}
+
+.clearfix:after {
+  content: " ";
+  display: block;
+  height: 0;
+  clear: both;
+}
+
+.btn-add {
+  background-color: $mainColor;
+  color: darken($mainColor, 25%);
+  width: 100%;
+  &:hover {
+    background-color:lighten($mainColor, 15%);
+    color: darken($mainColor, 25%);
+  }
+}
+.taskList {
+  &__header {
+    text-transform: uppercase;
+  }
+}
+.task {
+  &__text {
+    color:$taskTextColor;
+  }
+  &__actions {
+    float:right;
+  }
+}
+.btn-glyph {
+  background-color: inherit;
+  padding:3px;
+  &--red {
+    color: $redButton;
+  }
+}
+
+
+

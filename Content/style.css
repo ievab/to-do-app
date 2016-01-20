@@ -1,0 +1,34 @@
+body {
+  color: #2bc432; }
+
+h3, h2 {
+  text-align: center; }
+
+.clearfix:after {
+  content: " ";
+  display: block;
+  height: 0;
+  clear: both; }
+
+.btn-add {
+  background-color: #2bc432;
+  color: #145b17;
+  width: 100%; }
+  .btn-add:hover {
+    background-color: #5fdc65;
+    color: #145b17; }
+
+.taskList__header {
+  text-transform: uppercase; }
+
+.task__text {
+  color: #333; }
+
+.task__actions {
+  float: right; }
+
+.btn-glyph {
+  background-color: inherit;
+  padding: 3px; }
+  .btn-glyph--red {
+    color: red; }
