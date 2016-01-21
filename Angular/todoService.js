@@ -7,6 +7,11 @@
     angular.module("ToDoApp")
 
         .factory("ToDoService", function(){
+            var ToDoServicefactory = {};
+
+            //servisa funkcijas
+
+            return ToDoServicefactory;
 
     });
 

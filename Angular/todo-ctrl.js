@@ -6,8 +6,8 @@
 
     angular.module("ToDoApp")
 
-        .controller("ToDoCtrl", function($scope) {
-            $scope.task = "1.Uzdevums";
-    });
+        .controller("ToDoCtrl",["ToDoService", function(ToDoService) {
+        // kontroliera funkcijas un objekti
+    }]);
 
 })();
