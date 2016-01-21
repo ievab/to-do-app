@@ -7,7 +7,7 @@
     angular.module("todoApp")
         .factory("ToDoService", ["$http", "$q", function($http, $q){
             var toDoServiceFactory = {};
-            var toDoMsLocation = "http://localhost:89/api/todo/";
+            var toDoMsLocation = "http://10.11.57.23:89/api/todo/";
 
             var _getTaskList = function() {
                 var deferred = $q.defer();
