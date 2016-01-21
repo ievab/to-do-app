@@ -1,5 +1,5 @@
 body {
-  color: #2bc432; }
+  color: #17c400; }
 
 h3, h2 {
   text-align: center; }
@@ -11,12 +11,12 @@ h3, h2 {
   clear: both; }
 
 .btn-add {
-  background-color: #2bc432;
-  color: #145b17;
+  background-color: #17c400;
+  color: #084500;
   width: 100%; }
   .btn-add:hover {
-    background-color: #5fdc65;
-    color: #145b17; }
+    background-color: #2dff12;
+    color: #084500; }
 
 .taskList__header {
   text-transform: uppercase; }
@@ -31,4 +31,6 @@ h3, h2 {
   background-color: inherit;
   padding: 3px; }
   .btn-glyph--red {
-    color: red; }
+    color: #ff00c5; }
+  .btn-glyph--yellow {
+    color: yellow; }

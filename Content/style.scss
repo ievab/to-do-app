@@ -1,5 +1,5 @@
-$mainColor: #2bc432;
-$redButton: red;
+$mainColor: #17c400;
+$redButton: #ff00c5;
 $taskTextColor: #333;
 body {
   color:$mainColor;
@@ -43,6 +43,9 @@ h3, h2 {
   padding:3px;
   &--red {
     color: $redButton;
+  }
+  &--yellow {
+    color: yellow;
   }
 }
 
