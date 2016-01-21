@@ -3,6 +3,9 @@
  */
 (function() {
 
-    angular.module("ToDoApp", []);
+    angular.module("H2OApp", [
+        "ToDoApp"
+    ])
+        .run()
 
-})();
+});

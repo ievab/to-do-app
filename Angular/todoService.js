@@ -7,7 +7,7 @@
     angular.module("ToDoApp")
 
         .factory("ToDoService", ['$http', '$q', function($http, $q){
-            var ToDoServicefactory = {};
+            var toDoServicefactory = {};
             var toDoMsLocation = "http://10.11.56.240:9969/api/todo/";
             //servisa funkcijas
             var _getTasks = function() {
@@ -84,4 +84,4 @@
 
     }]);
 
-})();
+}());

@@ -2,9 +2,13 @@
 <html lang="en">
 <link rel="stylesheet" type="text/css" href="Content/bootstrap.css"/>
 <link rel="stylesheet" type="text/css" href="Content/style.css"/>
+
 <script src="Scripts/angular.min.js"></script>
 <script src="Scripts/angular-ui-router.min.js"></script>
+
 <script src="Angular/app.js"></script>
+<script src="Angular/modules.js"></script>
+
 <script src="Angular/todo-ctrl.js"></script>
 <script src="Angular/todoService.js"></script>
 
@@ -16,11 +20,13 @@
 <div class="container">
     <h2>TO DO App</h2>
     <div class="row">
-        <div class="col-md-10 col-sm-10">
-            <form ng-submit="todo.addTask()"><input type="text" class="form-control" ng-model="todo.task" placeholder="My task..."/></form>
-        </div>
+        <form ng-submit="todo.addTask()">
+            <div class="col-md-10 col-sm-10">
+                <input type="text" class="form-control" ng-model="todo.task" placeholder="My task..."/>
+            </div>
+        </form>
         <div class="col-md-2 col-sm-2">
-            <a type="button" class="btn btn-add" ng-click="todo.addTask()">ADD TASK</a>
+            <a type="button" class="btn btn-add" ng-click="todo.addTask()" ng-disabled="!todo.task">ADD TASK</a>
         </div>
     </div>
 
@@ -29,7 +35,10 @@
             <h3 class="taskList__header">to do</h3>
             <ul class="taskList__body list-group" ng-if="todo.tasks">
                 <li class="task list-group-item clearfix" ng-repeat="task in todo.tasks | filter:{ isItDone: 'false'}">
-                    <span class="task__text pull-left">{{task.task}}</span>
+                    <span class="task__text pull-left" ng-click="showDate = !showDate">{{task.task}}</span>
+                    <div class="task__date" ng-class="{ 'hidden': ! showDate}">
+                        <p>{{task.created | date: 'fullDate'}}</p>
+                    </div>
                     <div class="task__actions">
                         <button type="button" class="btn btn-glyph" ng-click="todo.doneTask(task.id)">
                             <span class="glyphicon glyphicon-ok"></span>
@@ -47,7 +56,8 @@
                 <li class="task list-group-item clearfix" ng-repeat="task in todo.tasks | filter:{ isItDone: 'true'}">
                     <span class="task__text pull-left ">{{task.task}}</span>
                     <div class="task__actions">
-                        <button type="button" class="btn btn-glyph btn-glyph--undone" ng-click="todo.undoneTask(task.id)">
+                        <button type="button" class="btn btn-glyph btn-glyph--undone"
+                                ng-click="todo.undoneTask(task.id)">
                             <span class="glyphicon glyphicon-ok"></span>
                         </button>
                         <button type="button" class="btn btn-glyph btn-glyph--red" ng-click="todo.deleteTask(task.id)">
