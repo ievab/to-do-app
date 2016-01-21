@@ -8,7 +8,7 @@
 
         .factory("ToDoService", ['$http', '$q', function($http, $q){
             var toDoServicefactory = {};
-            var toDoMsLocation = "http://10.11.56.240:9969/api/todo/";
+            var toDoMsLocation = "http://h2o:9969/api/todo/";
             //servisa funkcijas
             var _getTasks = function() {
                 var deferred = $q.defer();
@@ -75,12 +75,12 @@
                 return deferred.promise;
             };
 
-            ToDoServicefactory.getTasks = _getTasks;
-            ToDoServicefactory.addTask = _saveTask;
-            ToDoServicefactory.deleteTask = _deleteTask;
-            ToDoServicefactory.doneTask = _doneTask;
-            ToDoServicefactory.undoneTask = _undoneTask;
-            return ToDoServicefactory;
+            toDoServicefactory.getTasks = _getTasks;
+            toDoServicefactory.addTask = _saveTask;
+            toDoServicefactory.deleteTask = _deleteTask;
+            toDoServicefactory.doneTask = _doneTask;
+            toDoServicefactory.undoneTask = _undoneTask;
+            return toDoServicefactory;
 
     }]);
 

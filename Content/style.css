@@ -31,6 +31,8 @@ h3, h2 {
   background-color: inherit;
   padding: 3px; }
   .btn-glyph--red {
-    color: #ff00c5; }
-  .btn-glyph--yellow {
-    color: yellow; }
+    color: #ff191f; }
+  .btn-glyph--undone {
+    color: orange;
+    -webkit-transform: scale(-1, 1);
+            transform: scale(-1, 1); }
