@@ -36,6 +36,7 @@
             <ul class="taskList__body list-group" ng-if="todo.tasks != null">
                 <li class="task list-group-item clearfix" ng-repeat="task in todo.tasks | filter:{ isItDone: 'false'}">
                     <span class="task__text pull-left" ng-click="showDate = !showDate">{{task.task}}</span>
+                    <br>
                     <div class="task__date" ng-class="{ 'hidden': ! showDate}">
                         <p>{{task.created | date: 'fullDate'}}</p>
                     </div>
@@ -54,7 +55,11 @@
             <h3 class="taskList__header">done</h3>
             <ul class="taskList__body list-group" ng-if="todo.tasks != null">
                 <li class="task list-group-item clearfix" ng-repeat="task in todo.tasks | filter:{ isItDone: 'true'}">
-                    <span class="task__text pull-left ">{{task.task}}</span>
+                    <span class="task__text pull-left" ng-click="showDate = !showDate">{{task.task}}</span>
+                    <br>
+                    <div class="task__date" ng-class="{ 'hidden': ! showDate}">
+                        <p>{{task.created | date: 'fullDate'}}</p>
+                    </div>
                     <div class="task__actions">
                         <button type="button" class="btn btn-glyph btn-glyph--undone"
                                 ng-click="todo.undoneTask(task.id)">

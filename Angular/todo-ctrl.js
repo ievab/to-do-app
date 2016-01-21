@@ -9,7 +9,7 @@
         .controller("ToDoCtrl",["ToDoService", function(ToDoService) {
             // kontroliera funkcijas un objekti
             var taskController = this;
-            taskController.tasks = {};
+            taskController.tasks = [];
             taskController.task = '';
 
             taskController.addTask = function(){

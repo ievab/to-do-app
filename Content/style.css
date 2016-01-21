@@ -23,6 +23,10 @@ h3, h2 {
 
 .task__text {
   color: #333; }
+  .task__text:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    color: #0b5e00; }
 
 .task__actions {
   float: right; }

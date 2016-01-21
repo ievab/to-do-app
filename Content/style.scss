@@ -33,6 +33,11 @@ h3, h2 {
 .task {
   &__text {
     color:$taskTextColor;
+    &:hover {
+      cursor:pointer;
+      text-decoration: underline;
+      color:darken($mainColor, 20%);
+    }
   }
   &__actions {
     float:right;
