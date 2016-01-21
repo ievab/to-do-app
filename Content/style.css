@@ -21,11 +21,13 @@ h3, h2 {
 .taskList__header {
   text-transform: uppercase; }
 
-.task__text {
-  color: #333; }
-
-.task__actions {
-  float: right; }
+.task {
+  margin-bottom: 10px; }
+  .task__text {
+    color: #333;
+    word-break: break-all; }
+  .task__actions {
+    float: right; }
 
 .btn-glyph {
   background-color: inherit;

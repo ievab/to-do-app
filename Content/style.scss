@@ -34,6 +34,7 @@ h3, h2 {
   margin-bottom: 10px;
   &__text {
     color:$taskTextColor;
+    word-break: break-all;
   }
   &__actions {
     float:right;

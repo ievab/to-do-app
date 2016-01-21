@@ -13,14 +13,14 @@ gulp.task('serve', ['sass'], function() {
             baseDir: "./"
         }
     });
-    gulp.watch("styles/*.scss", ['sass']);
+    gulp.watch("Content/*.scss", ['sass']);
     gulp.watch("index.html").on('change', browserSync.reload);
 });
 
 gulp.task('sass', function() {
-    return gulp.src("styles/*.scss")
+    return gulp.src("Content/*.scss")
         .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer({ browsers: ['last 2 versions'] }))
-        .pipe(gulp.dest("styles"))
+        .pipe(gulp.dest("Content"))
         .pipe(browserSync.stream());
 });
